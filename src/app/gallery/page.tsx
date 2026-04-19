@@ -156,7 +156,7 @@ export default function Gallery() {
                   the people and places that define this journey.
                 </p>
                 <div className="animate-fade-up delay-4" style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginBottom: "2rem" }}>
-                  {["35+ Photos", "1 Video", "3 Continents", "Events", "Speaking"].map((t) => (
+                  {["Photos", "Videos", "Events", "Speaking"].map((t) => (
                     <span key={t} style={{ fontSize: "0.72rem", padding: "0.3rem 0.85rem", borderRadius: "2rem", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.6)", fontWeight: 500 }}>
                       {t}
                     </span>
