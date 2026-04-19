@@ -217,11 +217,11 @@ export default function Contact() {
 
               <Reveal delay={0.3}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  <a href="mailto:andrewakotoaddo@gmail.com" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#2d3f4e", textDecoration: "none", fontSize: "0.9rem" }}>
+                  <a href="mailto:andy@shiftimpact.africa" style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#2d3f4e", textDecoration: "none", fontSize: "0.9rem" }}>
                     <div style={{ width: "2.2rem", height: "2.2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A" }}>
                       <HiMail size={16} />
                     </div>
-                    andrewakotoaddo@gmail.com
+                    andy@shiftimpact.africa
                   </a>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#2d3f4e", fontSize: "0.9rem" }}>
                     <div style={{ width: "2.2rem", height: "2.2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A" }}>
