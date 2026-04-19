@@ -191,13 +191,13 @@ export default function Experience() {
                 <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>
-                    Work History
+                    Professional Journey
                   </span>
                 </div>
 
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
-                  12 Years of<br />
-                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>Building Africa</em>
+                  Built on<br />
+                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>Purpose & Partnerships</em>
                 </h1>
 
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
