@@ -119,11 +119,11 @@ export default function Contact() {
 
                 {/* Contact details */}
                 <div className="animate-fade-up delay-4" style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2rem" }}>
-                  <a href="mailto:andrewakotoaddo@gmail.com" style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", color: "rgba(255,255,255,0.75)", textDecoration: "none", fontSize: "0.95rem" }}>
+                  <a href="mailto:andy@shiftimpact.africa" style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", color: "rgba(255,255,255,0.75)", textDecoration: "none", fontSize: "0.95rem" }}>
                     <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
                       <HiMail size={15} />
                     </div>
-                    andrewakotoaddo@gmail.com
+                    andy@shiftimpact.africa
                   </a>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", color: "rgba(255,255,255,0.75)", fontSize: "0.95rem" }}>
                     <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
