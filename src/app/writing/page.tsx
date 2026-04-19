@@ -35,7 +35,7 @@ const fallbackManualArticles: Article[] = [
     title: "The Polyglot Powerhouse",
     excerpt: "A feature on Andrews Akoto-Addo and his work as a Pan-African social entrepreneur, ecosystem builder and conference host.",
     link: "https://blog.discoursechannel.com/the-polyglot-powerhouse/",
-    thumb: "https://miro.medium.com/v2/resize:fill:320:214/1*F71JHJSfnEfLNSx2fPgUGw.jpeg",
+    thumb: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776620236/Polyglot_m9dpce.png",
   },
 ];
 

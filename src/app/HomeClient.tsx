@@ -117,32 +117,45 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
             <div className="home-hero-grid">
               <div>
                 <div className="animate-fade-in delay-1" style={{ marginBottom: "0.5rem" }}>
-                  <svg width="100%" viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" className="andy-svg">
-                    <style>{`
-                      .s { fill: none; stroke: #C9912A; stroke-linecap: round; stroke-linejoin: round; }
-                      .tk { stroke-width: 16; }
-                      .tn { stroke-width: 7; }
-                      .draw { stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: draw 0.9s cubic-bezier(0.4,0,0.2,1) forwards; }
-                      .d1 { animation-delay: 0.0s; } .d2 { animation-delay: 0.35s; } .d3 { animation-delay: 0.65s; }
-                      .d4 { animation-delay: 1.0s; } .d5 { animation-delay: 1.3s; } .d6 { animation-delay: 1.55s; }
-                      .d7 { animation-delay: 1.8s; } .d8 { animation-delay: 2.05s; } .d9 { animation-delay: 2.3s; }
-                      .d10 { animation-delay: 2.5s; }
-                      @keyframes draw { to { stroke-dashoffset: 0; } }
-                      .dot { fill: #C9912A; r: 0; animation: popin 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; animation-delay: 2.9s; }
-                      @keyframes popin { to { r: 10; } }
-                    `}</style>
-                    <path className="s tk draw d1" d="M 52 185 L 110 35" />
-                    <path className="s tn draw d2" d="M 110 35 L 168 185" />
-                    <path className="s tn draw d3" d="M 73 128 L 147 128" />
-                    <path className="s tk draw d4" d="M 208 185 L 208 85" />
-                    <path className="s tn draw d5" d="M 208 100 C 220 62 282 60 284 100 L 284 185" />
-                    <path className="s tn draw d6" d="M 362 35 L 362 185" />
-                    <path className="s tk draw d7" d="M 362 155 C 356 188 292 192 288 148 C 284 104 315 76 362 96" />
-                    <path className="s tk draw d8" d="M 402 90 L 448 162" />
-                    <path className="s tn draw d9" d="M 494 90 L 448 162 L 422 210" />
-                    <path className="s tn draw d10" d="M 52 200 C 160 215 340 215 494 200" strokeWidth="2" stroke="#C9912A" opacity="0.3" />
-                    <circle className="dot" cx="530" cy="185" fill="#C9912A" />
-                  </svg>
+                  <svg width="100%" viewBox="0 0 620 180" xmlns="http://www.w3.org/2000/svg" className="andy-svg">
+  <style>{`
+    .s { fill: none; stroke: #C9912A; stroke-linecap: round; stroke-linejoin: round; }
+    .tk { stroke-width: 14; }
+    .tm { stroke-width: 9; }
+    .tn { stroke-width: 6; }
+    .draw { stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: draw 1.1s cubic-bezier(0.4,0,0.2,1) forwards; }
+    .d1 { animation-delay: 0.0s; } .d2 { animation-delay: 0.3s; } .d3 { animation-delay: 0.55s; }
+    .d4 { animation-delay: 0.8s; } .d5 { animation-delay: 1.05s; } .d6 { animation-delay: 1.3s; }
+    .d7 { animation-delay: 1.5s; } .d8 { animation-delay: 1.7s; } .d9 { animation-delay: 1.9s; }
+    .d10 { animation-delay: 2.1s; } .d11 { animation-delay: 2.3s; } .d12 { animation-delay: 2.5s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .dot { fill: #C9912A; r: 0; animation: popin 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; animation-delay: 2.85s; }
+    @keyframes popin { to { r: 9; } }
+  `}</style>
+
+  {/* A — italic serif style */}
+  <path className="s tk draw d1" d="M 30 155 C 45 120 65 75 85 30" />
+  <path className="s tk draw d2" d="M 85 30 C 100 65 118 110 138 155" />
+  <path className="s tm draw d3" d="M 50 105 L 118 105" />
+
+  {/* n — italic */}
+  <path className="s tk draw d4" d="M 158 155 C 160 120 162 90 164 65" />
+  <path className="s tm draw d5" d="M 164 65 C 172 42 195 38 210 50 C 222 60 224 80 224 100 L 224 155" />
+
+  {/* d — italic */}
+  <path className="s tk draw d6" d="M 290 20 C 288 60 286 110 284 155" />
+  <path className="s tm draw d7" d="M 284 95 C 278 68 258 55 242 62 C 224 70 220 95 224 115 C 228 138 244 152 262 150 C 274 148 283 138 284 125" />
+
+  {/* y — italic */}
+  <path className="s tk draw d8" d="M 310 65 C 322 90 336 115 348 140" />
+  <path className="s tm draw d9" d="M 388 65 C 375 92 360 118 348 140 C 338 160 326 175 310 185" />
+
+  {/* . dot */}
+  <circle className="dot" cx="408" cy="152" fill="#C9912A" />
+
+  {/* Underline flourish */}
+  <path className="s tn draw d12" d="M 25 168 C 130 178 300 178 415 168" strokeWidth="2" stroke="#C9912A" opacity="0.3" />
+</svg>
                   <span style={{ display: "block", fontWeight: 300, color: "rgba(255,255,255,0.75)", fontSize: "clamp(1rem,1.5vw,1.2rem)", letterSpacing: "0.06em", marginTop: "1.2rem" }}>
                     Andrews Akoto-Addo
                   </span>

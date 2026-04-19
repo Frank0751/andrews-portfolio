@@ -20,16 +20,8 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-function Reveal({
-  children,
-  className = "",
-  delay = 0,
-  style = {},
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  style?: React.CSSProperties;
+function Reveal({ children, className = "", delay = 0, style = {} }: {
+  children: React.ReactNode; className?: string; delay?: number; style?: React.CSSProperties;
 }) {
   const { ref, inView } = useInView();
   return (
@@ -50,42 +42,33 @@ export default function About() {
   return (
     <main>
       <style>{`
-        .page-hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 3rem; align-items: center; }
-        .page-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-        .page-3col { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
-        .page-hero-photo { position: relative; height: 500px; }
-        .page-hero-matrix { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.6rem; height: 500px; }
-        @media (max-width: 900px) {
-          .page-hero-grid { grid-template-columns: 1fr; }
-          .page-hero-photo { height: 320px; margin-top: 2rem; }
-          .page-hero-matrix { height: 260px; margin-top: 2rem; }
-          .page-2col { grid-template-columns: 1fr; gap: 2.5rem; }
-          .page-3col { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-          .page-3col { grid-template-columns: 1fr; }
-        }
-      `}</style>
+  .page-hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 3rem; align-items: center; }
+  .page-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .page-hero-photo { position: relative; height: 500px; }
+  @media (max-width: 900px) {
+    .page-hero-grid { grid-template-columns: 1fr !important; }
+    .page-hero-photo { height: 320px; margin-top: 2rem; }
+    .page-2col { grid-template-columns: 1fr !important; gap: 2.5rem; }
+    div[style*="gridTemplateColumns: \"repeat(3,1fr)\""] { grid-template-columns: 1fr !important; }
+    div[style*="gridTemplateColumns: \"repeat(4,1fr)\""] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="gridTemplateColumns: \"repeat(4,1fr)\""] { grid-template-columns: 1fr 1fr !important; }
+  }
+`}</style>
 
-      
-
-      {/* ═══════════════════════════════════════
-          HERO
-      ═══════════════════════════════════════ */}
+      {/* HERO */}
       <section style={{ background: "#0a1628", minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
           <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(0,165,195,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,165,195,0.04) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
           <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: "100%", background: "radial-gradient(ellipse 70% 80% at 80% 40%, rgba(0,165,195,0.08) 0%, transparent 70%)" }} />
           <div style={{ position: "absolute", bottom: 0, left: 0, width: "33%", height: "50%", background: "radial-gradient(ellipse 60% 60% at 20% 80%, rgba(201,145,42,0.06) 0%, transparent 60%)" }} />
         </div>
-
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="page-hero-grid">
-
               <div>
                 <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
-                  
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>About Andy</span>
                 </div>
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
@@ -93,11 +76,7 @@ export default function About() {
                   <em style={{ fontStyle: "italic", color: "#C9912A" }}>Behind the Work</em>
                 </h1>
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
-                  A Pan-African social entrepreneur and ecosystem builder
-                  passionately dedicated to creating shared value across the continent.
-                  From Ghana&apos;s public service to innovation hubs in Shenzhen, leadership
-                  summits in Stockholm, entrepreneurship ecosystems in Johannesburg,
-                  continental gatherings in Kigali, and the trade corridors of Rabat.
+                 A Pan-African social entrepreneur and ecosystem builder passionately committed to creating shared value across the continent. From Ghana&apos;s social sector to innovation labs in Shenzhen, India, Kigali, and Rabat, and developing entrepreneurship ecosystems in Accra, while fostering continental gatherings and intra-African trade across Africa.
                 </p>
                 <div className="animate-fade-up delay-4" style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
                   <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.8rem 1.6rem", background: "#C9912A", color: "#0a1628", fontWeight: 700, borderRadius: "3rem", fontSize: "0.88rem", textDecoration: "none" }}>
@@ -108,17 +87,10 @@ export default function About() {
                   </Link>
                 </div>
               </div>
-
               <div className="animate-fade-in delay-3 page-hero-photo">
                 <div style={{ position: "absolute", inset: 0, border: "1.5px solid rgba(201,145,42,0.25)", borderRadius: "2px", transform: "translate(10px,10px)" }} />
                 <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden", borderRadius: "2px" }}>
-                  <Image
-                    src="https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776125121/491498564_18366378268130220_2175622565025465249_n_xpjqfi.jpg"
-                    alt="Andrews Akoto-Addo (Andy)"
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center top" }}
-                    priority
-                  />
+                  <Image src="https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776125121/491498564_18366378268130220_2175622565025465249_n_xpjqfi.jpg" alt="Andrews Akoto-Addo (Andy)" fill style={{ objectFit: "cover", objectPosition: "center top" }} priority />
                 </div>
                 <div style={{ position: "absolute", bottom: "-12px", left: "-16px", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
@@ -131,20 +103,16 @@ export default function About() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
         <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.4rem" }}>
           <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>Scroll</span>
           <div style={{ width: "1px", height: "2rem", background: "linear-gradient(to bottom, rgba(255,255,255,0.3), transparent)" }} />
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════
-          STATS STRIP
-      ═══════════════════════════════════════ */}
+      {/* STATS */}
       <div style={{ background: "#152035", borderTop: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
           {[
@@ -161,84 +129,54 @@ export default function About() {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════
-          MY STORY
-      ═══════════════════════════════════════ */}
+      {/* MY STORY */}
       <section style={{ background: "#F5F2EA", padding: "6rem 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
+          <div className="page-2col">
 
-            {/* LEFT — Story */}
+            {/* LEFT */}
             <Reveal>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>
-                 My Story
-              </span>
+              <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>My Story</span>
               <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "0.5rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
                 Thinkers of Great Thoughts,
               </h2>
               <h2 className="font-serif" style={{ color: "#00739A", fontStyle: "italic", lineHeight: 1.15, marginBottom: "1.5rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
                 Doers of Great Deeds
               </h2>
-
               <blockquote style={{ borderLeft: "2px solid #C9912A", paddingLeft: "1.5rem", marginBottom: "2rem" }}>
                 <p className="font-serif" style={{ fontStyle: "italic", color: "#0a1628", fontSize: "clamp(1rem,1.6vw,1.25rem)", fontWeight: 400, lineHeight: 1.6 }}>
                   &ldquo;The future belongs to those who believe in the beauty of their dreams. And build structures to realise them.&rdquo;
                 </p>
               </blockquote>
-
               <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem", color: "#2d3f4e", lineHeight: 1.85, fontSize: "0.97rem" }}>
                 <p>
-                  Andrews Akoto-Addo (Andy) is a Pan-African social entrepreneur and
-                  ecosystem builder passionately dedicated to creating shared value across
-                  the continent. His journey has taken him from Ghana&apos;s public service
-                  innovation hubs in Shenzhen, leadership summits in Stockholm, entrepreneurship
-                  ecosystems in Johannesburg, continental gatherings in Kigali,
-                  and the trade corridors of Rabat.
+                  Andrews Akoto-Addo (Andy) is a Pan-African social entrepreneur and ecosystem builder passionately dedicated to creating shared value across the continent.
                 </p>
                 <p>
-                  With expertise spanning business development, partnership linkages,
-                  fundraising, and program management, Andy empowers African businesses
-                  and entrepreneurship support organisations to achieve sustainable,
-                  impactful growth. Not just for shareholders, but for the communities
-                  they serve.
+                  His journey has taken him from Ghana&apos;s social enterprise scene to innovation labs in Shenzhen, India, Kigali, and Rabat, and to the growth of entrepreneurship ecosystems and intra-African trade across the continent.
                 </p>
                 <p>
-                  As Managing Director (Ghana) and Head of New Business at{" "}
-                  <a href="https://www.svai.africa" target="_blank" rel="noreferrer" style={{ color: "#00739A", fontWeight: 600, textDecoration: "none" }}>
-                    Shared Value Africa
-                  </a>
-                  , Andy is driving the philosophy that business success and community
-                  prosperity are not trade-offs. They are the same goal.
+                  With expertise spanning business development, partnership linkages, fundraising, and programme management, Andy empowers African businesses and entrepreneurship support organisations to achieve sustainable, impactful growth not only for shareholders but also for the communities they serve.
                 </p>
                 <p>
-                  An engaging and dynamic conference host and panel moderator, Andy is
-                  known for facilitating insightful discussions on enterprise development,
-                  AfCFTA, climate action, social innovation, and digital infrastructure.
-                  Across Africa and globally.
+                  As Managing Director of <a href="https://www.svai.africa" target="_blank" rel="noreferrer" style={{ color: "#00739A", fontWeight: 600, textDecoration: "none" }}>Shared Value Africa</a> Ghana and Head of New Business at <a href="https://www.svai.africa" target="_blank" rel="noreferrer" style={{ color: "#00739A", fontWeight: 600, textDecoration: "none" }}>Shared Value Africa</a>, Andy champions the philosophy that business success and community prosperity are not mutually exclusive. They are the same goal.
+                </p>
+                <p>
+                  An engaging and dynamic conference host and panel moderator, Andy is recognised for facilitating insightful discussions on enterprise development, AfCFTA, climate action, social innovation, and digital infrastructure across Africa and globally.
                 </p>
               </div>
-
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "2rem" }}>
                 {["Business Development", "Partnership Linkages", "Fundraising", "Program Management", "AfCFTA", "Digital Innovation", "Social Entrepreneurship", "SME Development", "Ecosystem Building", "Shared Value"].map((t) => (
-                  <span key={t} style={{ fontSize: "0.72rem", padding: "0.3rem 0.85rem", borderRadius: "2rem", border: "1px solid rgba(0,0,0,0.1)", background: "#ffffff", color: "#2d3f4e", fontWeight: 500 }}>
-                    {t}
-                  </span>
+                  <span key={t} style={{ fontSize: "0.72rem", padding: "0.3rem 0.85rem", borderRadius: "2rem", border: "1px solid rgba(0,0,0,0.1)", background: "#ffffff", color: "#2d3f4e", fontWeight: 500 }}>{t}</span>
                 ))}
               </div>
             </Reveal>
 
-            {/* RIGHT — Sidebar */}
+            {/* RIGHT */}
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-
-              {/* Photo */}
               <Reveal delay={0.1}>
                 <div style={{ position: "relative", width: "100%", height: "300px", borderRadius: "12px", overflow: "hidden" }}>
-                  <Image
-                    src="https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776127735/655937334_18112927921735492_7610053134791253292_n_w6uiqa.jpg"
-                    alt="Andy at work"
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center" }}
-                  />
+                  <Image src="https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776127735/655937334_18112927921735492_7610053134791253292_n_w6uiqa.jpg" alt="Andy at work" fill style={{ objectFit: "cover", objectPosition: "center" }} />
                 </div>
               </Reveal>
 
@@ -248,8 +186,8 @@ export default function About() {
                   <div style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "1.2rem" }}>At a Glance</div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
                     {[
-                      { label: "Location", value: "Accra, Greater Accra, Ghana" },
-                      { label: "Current Role", value: "MD Ghana & Head of New Business, Shared Value Africa" },
+                      { label: "Location", value: "Accra, Ghana" },
+                      { label: "Current Role", value: "MD Ghana & Head of New Business, Shared Value Africa", href: "https://www.svai.africa" },
                       { label: "Email", value: "andy@shiftimpact.africa", href: "mailto:andy@shiftimpact.africa" },
                       { label: "Website", value: "svai.africa", href: "https://www.svai.africa" },
                     ].map((item) => (
@@ -286,51 +224,34 @@ export default function About() {
                 <div style={{ background: "#ffffff", borderRadius: "12px", padding: "1.8rem", border: "1px solid rgba(0,0,0,0.08)" }}>
                   <div style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "1.2rem" }}>Connect</div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                    <a href="https://www.linkedin.com/in/andrewsakotoaddo" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", color: "#2d3f4e", fontSize: "0.88rem" }}>
-                      <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
-                        <FaLinkedinIn size={14} />
-                      </div>
-                      linkedin.com/in/andrewsakotoaddo
-                    </a>
-                    <a href="https://andrewakotoaddo.medium.com" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", color: "#2d3f4e", fontSize: "0.88rem" }}>
-                      <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
-                        <FaMediumM size={14} />
-                      </div>
-                      andrewakotoaddo.medium.com
-                    </a>
-                    <a href="https://www.instagram.com/andrewsakotoaddo" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", color: "#2d3f4e", fontSize: "0.88rem" }}>
-                      <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
-                        <FaInstagram size={14} />
-                      </div>
-                      @andrewsakotoaddo
-                    </a>
-                    <a href="https://web.facebook.com/andrew.mul" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", color: "#2d3f4e", fontSize: "0.88rem" }}>
-                      <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
-                        <FaFacebookF size={14} />
-                      </div>
-                      @FiifiAndrew
-                    </a>
+                    {[
+                      { href: "https://www.linkedin.com/in/andrewsakotoaddo", icon: <FaLinkedinIn size={14} />, label: "linkedin.com/in/andrewsakotoaddo" },
+                      { href: "https://andrewakotoaddo.medium.com", icon: <FaMediumM size={14} />, label: "andrewakotoaddo.medium.com" },
+                      { href: "https://www.instagram.com/andy.oneafrica", icon: <FaInstagram size={14} />, label: "@andy.oneafrica" },
+                      { href: "https://web.facebook.com/andy.oneafrica", icon: <FaFacebookF size={14} />, label: "@andy.oneafrica" },
+                    ].map((item, i) => (
+                      <a key={i} href={item.href} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", color: "#2d3f4e", fontSize: "0.88rem" }}>
+                        <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
+                          {item.icon}
+                        </div>
+                        {item.label}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </Reveal>
-
             </div>
           </div>
         </div>
       </section>
 
-     {/* ═══════════════════════════════════════
-          AFFILIATIONS & NETWORKS
-      ═══════════════════════════════════════ */}
+      {/* AFFILIATIONS & NETWORKS */}
       <section style={{ background: "#EDE8DC", padding: "6rem 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
-
+          <div className="page-2col">
             <div>
               <Reveal>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>
-                   Affiliations & Networks
-                </span>
+                <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Affiliations & Networks</span>
                 <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "2rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
                   Affiliations <em style={{ fontStyle: "italic", color: "#00739A" }}>&amp; Networks</em>
                 </h2>
@@ -361,17 +282,15 @@ export default function About() {
 
             <div>
               <Reveal delay={0.15}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>
-                   Current Focus
-                </span>
+                <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Current Focus</span>
                 <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "2rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
                   Current <em style={{ fontStyle: "italic", color: "#00739A" }}>Focus</em>
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                   {[
                     { org: "Shared Value Africa", role: "MD Ghana & Head of New Business", href: "https://www.svai.africa" },
-                    { org: "JamiiTrade Africa", role: "Ghana Focal Point", href: "https://jamiitrade.africa/u/andrews" },
-                    { org: "African Youth, Gender and Climate Conference", role: "Ecosystem Advisor & Host", href: "https://www.linkedin.com/in/andrewsakotoaddo" },
+                    { org: "JamiiTrade Africa", role: "Focal Point", href: "https://jamiitrade.africa/u/andrews" },
+                    { org: "African Youth, Gender and Climate Governance", role: "Ecosystem Advisor", href: "https://www.linkedin.com/in/andrewsakotoaddo" },
                     { org: "Conference & Panel Moderation", role: "Pan-African Engagements", href: "/contact" },
                   ].map((item, i) => (
                     <Reveal key={i} delay={i * 0.08}>
@@ -388,14 +307,11 @@ export default function About() {
                 </div>
               </Reveal>
             </div>
-
           </div>
         </div>
       </section>
 
-        {/* ═══════════════════════════════════════
-          PHOTO STRIP
-      ═══════════════════════════════════════ */}
+      {/* PHOTO STRIP */}
       <section style={{ background: "#0a1628", padding: "4rem 0", overflow: "hidden" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1rem" }}>
@@ -414,21 +330,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════
-          CTA
-      ═══════════════════════════════════════ */}
+      {/* CTA */}
       <section style={{ background: "#152035", padding: "6rem 0", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: "600px", height: "300px", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(201,145,42,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
         <Reveal style={{ position: "relative", zIndex: 10, maxWidth: "40rem", margin: "0 auto", padding: "0 5%", textAlign: "center" }}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
-             Work Together
-          </span>
+          <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1.5rem", display: "block" }}>Work Together</span>
           <h2 className="font-serif" style={{ color: "#ffffff", lineHeight: 1.15, marginBottom: "1.5rem", fontSize: "clamp(2rem,3.5vw,3.2rem)" }}>
             Ready to Build Something <em style={{ fontStyle: "italic", color: "#C9912A" }}>Meaningful?</em>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.75, marginBottom: "2.5rem", fontSize: "1rem" }}>
-            Open to conversations about partnerships, speaking engagements,
-            ecosystem building, and shared value opportunities across Africa.
+            Open to conversations about partnerships, speaking engagements, ecosystem building, and shared value opportunities across Africa.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
             <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.9rem 2rem", background: "#C9912A", color: "#0a1628", fontWeight: 700, borderRadius: "3rem", fontSize: "0.9rem", textDecoration: "none" }}>
@@ -441,9 +352,7 @@ export default function About() {
         </Reveal>
       </section>
 
-      {/* ═══════════════════════════════════════
-          FOOTER
-      ═══════════════════════════════════════ */}
+      {/* FOOTER */}
       <footer style={{ background: "#0a1628", borderTop: "1px solid rgba(255,255,255,0.08)", padding: "2rem 5%" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
           <Link href="/" className="font-serif" style={{ fontSize: "1.1rem", fontWeight: 600, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
@@ -456,7 +365,6 @@ export default function About() {
           </span>
         </div>
       </footer>
-
     </main>
   );
 }
