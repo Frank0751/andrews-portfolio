@@ -86,7 +86,28 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
         .home-testimonials-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
         .home-articles-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; }
         .home-hero-photo { position: relative; height: 500px; display: block; }
-        .andy-svg { max-width: 320px; }
+        .andy-svg { width: 100%; max-width: 360px; }
+
+        /* ── Andy signature stroke animation ── */
+        .ap { fill: none; stroke: #C9912A; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.4; }
+        .au { fill: none; stroke: #C9912A; stroke-linecap: round; stroke-width: 1.8; stroke-opacity: 0.35; }
+        @keyframes andyDraw { to { stroke-dashoffset: 0; } }
+
+        /* A outer */
+        .a0 { stroke-dasharray: 800;  stroke-dashoffset: 800;  animation: andyDraw 1.1s cubic-bezier(.4,0,.2,1) 0.0s  forwards; }
+        /* A crossbar */
+        .a1 { stroke-dasharray: 125;  stroke-dashoffset: 125;  animation: andyDraw 0.25s cubic-bezier(.4,0,.2,1) 0.9s  forwards; }
+        /* n */
+        .a2 { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: andyDraw 1.4s cubic-bezier(.4,0,.2,1) 1.1s  forwards; }
+        /* d outer */
+        .a3 { stroke-dasharray: 1055; stroke-dashoffset: 1055; animation: andyDraw 1.2s cubic-bezier(.4,0,.2,1) 2.3s  forwards; }
+        /* d bowl counter */
+        .a4 { stroke-dasharray: 510;  stroke-dashoffset: 510;  animation: andyDraw 0.65s cubic-bezier(.4,0,.2,1) 3.3s  forwards; }
+        /* y */
+        .a5 { stroke-dasharray: 1260; stroke-dashoffset: 1260; animation: andyDraw 1.3s cubic-bezier(.4,0,.2,1) 3.85s forwards; }
+        /* underline */
+        .a6 { stroke-dasharray: 420;  stroke-dashoffset: 420;  animation: andyDraw 0.7s cubic-bezier(.4,0,.2,1) 5.0s  forwards; }
+
         @media (max-width: 900px) {
           .home-hero-grid { grid-template-columns: 1fr; }
           .home-hero-photo { height: 380px; margin-top: 2rem; }
@@ -100,7 +121,7 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
           .home-pillars-grid { grid-template-columns: 1fr; }
           .home-impact-grid { grid-template-columns: 1fr; }
           .home-articles-grid { grid-template-columns: 1fr; }
-          .andy-svg { max-width: 260px; }
+          .andy-svg { max-width: 280px; }
         }
       `}</style>
 
@@ -117,45 +138,45 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
             <div className="home-hero-grid">
               <div>
                 <div className="animate-fade-in delay-1" style={{ marginBottom: "0.5rem" }}>
-                  <svg width="100%" viewBox="0 0 620 180" xmlns="http://www.w3.org/2000/svg" className="andy-svg">
-  <style>{`
-    .s { fill: none; stroke: #C9912A; stroke-linecap: round; stroke-linejoin: round; }
-    .tk { stroke-width: 14; }
-    .tm { stroke-width: 9; }
-    .tn { stroke-width: 6; }
-    .draw { stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: draw 1.1s cubic-bezier(0.4,0,0.2,1) forwards; }
-    .d1 { animation-delay: 0.0s; } .d2 { animation-delay: 0.3s; } .d3 { animation-delay: 0.55s; }
-    .d4 { animation-delay: 0.8s; } .d5 { animation-delay: 1.05s; } .d6 { animation-delay: 1.3s; }
-    .d7 { animation-delay: 1.5s; } .d8 { animation-delay: 1.7s; } .d9 { animation-delay: 1.9s; }
-    .d10 { animation-delay: 2.1s; } .d11 { animation-delay: 2.3s; } .d12 { animation-delay: 2.5s; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    .dot { fill: #C9912A; r: 0; animation: popin 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; animation-delay: 2.85s; }
-    @keyframes popin { to { r: 9; } }
-  `}</style>
 
-  {/* A — italic serif style */}
-  <path className="s tk draw d1" d="M 30 155 C 45 120 65 75 85 30" />
-  <path className="s tk draw d2" d="M 85 30 C 100 65 118 110 138 155" />
-  <path className="s tm draw d3" d="M 50 105 L 118 105" />
+                  {/* ── Andy Signature — real Playfair Display Italic paths ── */}
+                  <svg
+                    className="andy-svg"
+                    viewBox="0 0 380 210"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ overflow: "visible", display: "block" }}
+                    aria-label="Andy"
+                  >
+                    {/* A — outer contour */}
+                    <path className="ap a0"
+                      d="M34.94,115.34 L23.84,131.02 Q18.36,138.72 17.25,143.31 Q16.14,147.9 18.96,149.89 Q21.77,151.89 27.84,152.04 L27.1,155 Q22.95,154.7 18.51,154.63 Q14.07,154.56 10.22,154.56 Q6.52,154.56 4.01,154.63 Q1.49,154.7 -0.88,155 L-0.14,152.04 Q1.94,151.6 4.16,150.19 Q6.38,148.78 9.04,146.12 Q11.7,143.46 14.66,139.16 L78.45,49.48 L80.67,49.48 L86.59,142.57 Q87.04,147.9 89.33,149.89 Q91.62,151.89 93.84,152.04 L93.25,155 Q90.29,154.7 85.85,154.63 Q81.41,154.56 77.12,154.56 Q71.79,154.56 67.06,154.63 Q62.32,154.7 59.36,155 L59.95,152.04 Q67.06,151.74 70.02,149.45 Q72.98,147.16 72.68,139.61 L71.35,115.34 L34.94,115.34 Z"
+                    />
+                    {/* A — crossbar triangle */}
+                    <path className="ap a1"
+                      d="M37.01,112.38 L71.2,112.38 L68.68,67.53 L37.01,112.38 Z"
+                    />
+                    {/* n */}
+                    <path className="ap a2"
+                      d="M125.81,144.2 L123.15,155 L110.27,155 L128.03,91.51 Q128.62,89.73 128.99,87.59 Q129.36,85.44 128.77,83.89 Q128.18,82.33 125.81,82.33 Q122.56,82.33 120.04,85.51 Q117.52,88.7 114.42,97.43 L112.49,102.9 L109.68,102.9 L113.38,92.1 Q116.64,82.78 121.45,79.82 Q126.26,76.86 130.99,76.86 Q135.43,76.86 137.43,78.78 Q139.43,80.7 139.65,83.74 Q139.87,86.77 139.21,90.4 Q138.54,94.02 137.65,97.58 L132.62,117.7 Q136.32,108.68 140.02,101.87 Q144.9,92.84 149.64,87.29 Q154.38,81.74 159.33,79.3 Q164.29,76.86 169.62,76.86 Q176.58,76.86 179.17,80.19 Q181.76,83.52 181.46,88.62 Q181.16,93.73 179.39,99.2 L165.03,142.42 Q163.7,146.42 163.92,149.01 Q164.14,151.6 167.4,151.6 Q170.21,151.6 172.95,148.49 Q175.69,145.38 178.8,136.5 L180.72,131.02 L183.53,131.02 L179.83,141.83 Q177.76,148.04 174.73,151.3 Q171.69,154.56 168.36,155.81 Q165.03,157.07 161.92,157.07 Q158.37,157.07 156.08,155.89 Q153.78,154.7 152.6,152.78 Q150.97,150.12 151.56,145.82 Q152.16,141.53 153.93,136.35 L167.99,94.02 Q168.73,91.95 169.25,89.07 Q169.77,86.18 169.03,83.89 Q168.29,81.59 164.74,81.59 Q161.18,81.59 157.19,84.7 Q153.19,87.81 148.9,93.51 Q144.61,99.2 140.46,107.12 Q136.32,115.04 132.62,124.51 Q128.92,133.84 125.81,144.2 Z"
+                    />
+                    {/* d — outer contour with tall ascender */}
+                    <path className="ap a3"
+                      d="M274.55,37.34 L245.54,142.42 Q244.51,145.82 244.73,148.71 Q244.95,151.6 248.21,151.6 Q251.17,151.6 253.68,148.27 Q256.2,144.94 259.01,136.5 L260.79,131.02 L263.6,131.02 L260.2,141.83 Q258.42,147.75 255.46,151.08 Q252.5,154.41 249.24,155.74 Q245.99,157.07 243.03,157.07 Q234.15,157.07 233.7,148.64 Q233.56,146.27 234.07,143.16 Q234.59,140.05 235.63,136.35 L237.55,129.1 Q234.74,135.17 231.93,139.76 Q226.16,148.93 220.31,153 Q214.46,157.07 208.1,157.07 Q203.51,157.07 200.03,154.93 Q196.56,152.78 194.63,148.49 Q192.71,144.2 192.71,137.54 Q192.71,130.43 195,122.22 Q197.3,114 201.59,106.01 Q205.88,98.02 211.87,91.43 Q217.87,84.85 225.12,80.85 Q232.37,76.86 240.51,76.86 Q243.92,76.86 246.88,79.37 Q248.8,81.15 249.54,83.96 L256.94,56.28 Q258.27,51.25 256.5,48.88 Q254.72,46.52 247.47,46.52 L248.36,43.41 Q256.5,43.26 262.71,41.71 Q268.93,40.15 274.55,37.34 Z"
+                    />
+                    {/* d — bowl counter-form */}
+                    <path className="ap a4"
+                      d="M212.39,152.34 Q216.09,152.34 220.75,147.97 Q225.42,143.6 230.23,136.13 Q235.04,128.66 239.18,119.04 Q241.4,113.86 243.03,108.38 L248.5,87.81 Q247.76,84.26 245.99,82.48 Q243.62,80.26 240.66,80.26 Q235.04,80.26 229.78,84.11 Q224.53,87.96 220.24,94.32 Q215.94,100.68 212.69,108.45 Q209.43,116.22 207.66,124.29 Q205.88,132.36 205.88,139.46 Q205.88,145.97 207.51,149.15 Q209.14,152.34 212.39,152.34 Z"
+                    />
+                    {/* y — with descending tail flourish */}
+                    <path className="ap a5"
+                      d="M280.62,175.87 Q286.98,172.46 294.24,166.54 Q298.38,163.14 302.82,158.26 L291.87,91.8 Q291.13,87.22 290.09,85.44 Q289.06,83.66 287.13,83.66 Q285.5,83.66 283.43,86.25 Q281.36,88.84 278.4,97.28 L276.48,102.76 L273.66,102.76 L277.36,91.95 Q280.47,82.92 285.06,79.89 Q289.65,76.86 294.38,76.86 Q298.97,76.86 301.49,79.74 Q304,82.63 305.04,90.47 L312.59,146.12 Q319.25,136.8 325.02,125.84 Q332.12,112.08 334.94,98.02 Q332.57,96.69 329.83,94.69 Q327.09,92.69 325.32,89.95 Q323.54,87.22 323.69,83.81 Q323.98,80.41 326.06,78.63 Q328.13,76.86 331.24,76.86 Q335.23,76.86 337.08,79.89 Q338.93,82.92 338.93,88.84 Q338.93,96.39 336.42,105.05 Q333.9,113.71 329.68,122.59 Q325.46,131.47 320.28,139.68 Q315.1,147.9 309.78,154.56 Q307.41,157.52 303.26,161.96 Q299.12,166.4 293.42,171.06 Q287.72,175.72 280.62,179.12 Q276.18,181.2 273,182.01 Q269.82,182.82 267.74,182.82 Q264.78,182.82 262.56,181.27 Q260.34,179.72 260.34,176.76 Q260.34,173.5 262.79,171.8 Q265.23,170.1 268.34,170.1 Q271.74,170.1 274.77,171.87 Q277.81,173.65 280.62,175.87 Z"
+                    />
+                    {/* underline flourish */}
+                    <path className="au a6"
+                      d="M 5,168 C 120,180 260,180 355,168"
+                    />
+                  </svg>
 
-  {/* n — italic */}
-  <path className="s tk draw d4" d="M 158 155 C 160 120 162 90 164 65" />
-  <path className="s tm draw d5" d="M 164 65 C 172 42 195 38 210 50 C 222 60 224 80 224 100 L 224 155" />
-
-  {/* d — italic */}
-  <path className="s tk draw d6" d="M 290 20 C 288 60 286 110 284 155" />
-  <path className="s tm draw d7" d="M 284 95 C 278 68 258 55 242 62 C 224 70 220 95 224 115 C 228 138 244 152 262 150 C 274 148 283 138 284 125" />
-
-  {/* y — italic */}
-  <path className="s tk draw d8" d="M 310 65 C 322 90 336 115 348 140" />
-  <path className="s tm draw d9" d="M 388 65 C 375 92 360 118 348 140 C 338 160 326 175 310 185" />
-
-  {/* . dot */}
-  <circle className="dot" cx="408" cy="152" fill="#C9912A" />
-
-  {/* Underline flourish */}
-  <path className="s tn draw d12" d="M 25 168 C 130 178 300 178 415 168" strokeWidth="2" stroke="#C9912A" opacity="0.3" />
-</svg>
                   <span style={{ display: "block", fontWeight: 300, color: "rgba(255,255,255,0.75)", fontSize: "clamp(1rem,1.5vw,1.2rem)", letterSpacing: "0.06em", marginTop: "1.2rem" }}>
                     Andrews Akoto-Addo
                   </span>
