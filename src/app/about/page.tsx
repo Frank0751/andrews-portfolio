@@ -253,7 +253,7 @@ export default function About() {
               <Reveal>
                 <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Affiliations & Networks</span>
                 <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "2rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                  Affiliations <em style={{ fontStyle: "italic", color: "#00739A" }}>&amp; Networks</em>
+                 
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                   {[
@@ -284,7 +284,7 @@ export default function About() {
               <Reveal delay={0.15}>
                 <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Current Focus</span>
                 <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "2rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                  Current <em style={{ fontStyle: "italic", color: "#00739A" }}>Focus</em>
+                
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                   {[
