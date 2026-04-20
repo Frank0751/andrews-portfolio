@@ -256,7 +256,8 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
             <Reveal>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>Who I Am</span>
               <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "1rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                Creating Shared Value<br />
+                Creating<br />
+                Shared Value<br />
                 <em style={{ color: "#00739A" }}>Across Africa</em>
               </h2>
               <p style={{ color: "#4a6070", fontSize: "1rem", lineHeight: 1.7, marginBottom: "2rem", maxWidth: "32rem" }}>

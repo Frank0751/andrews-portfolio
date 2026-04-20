@@ -52,9 +52,35 @@ const hardcodedNumbers = [
 ];
 
 const hardcodedHighlights = [
-  { title: "EU-Africa SME Summit", location: "Brussels, Belgium", year: "2025", description: "Represented Ghana's SME ecosystem at the EU-Africa SME Summit, facilitating dialogue between European and African business leaders on trade and investment opportunities.", image: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776127496/568690701_18389482405130220_4097415862773396182_n_fpagkr.jpg" },
-  { title: "African Climate Summit", location: "Nairobi, Kenya", year: "2023", description: "Participated in the first African Climate Summit, contributing to conversations on private sector engagement in Africa's climate response and green economy transition.", image: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776127498/568403187_18389482339130220_7445678454955259057_n_tqzlwz.jpg" },
-  { title: "UNLEASH Innovation Lab", location: "Shenzhen, China", year: "2018", description: "Facilitated an innovation lab bringing together 1,000 young leaders to develop solutions to the UN Sustainable Development Goals. A defining moment in Andy's approach to ecosystem building.", image: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776127738/658877472_18584227099063671_8574493065532499635_n_zg28od.jpg" },
+  {
+    title: "JamiiTrade — Building Africa's Digital Trade Ecosystem",
+    location: "African Entrepreneurship Forum",
+    year: "2025",
+    description: "JamiiTrade is a digital ecosystem nearly three years in the making, built to address information asymmetry and help Africa capitalise on AfCFTA and EU Global Gateway opportunities. Andy and Edgar Ouko recently highlighted its progress at the African Entrepreneurship Forum, discussing how entrepreneurs can leverage the AfCFTA Digital Trade Protocol. Built with Shared Value Africa and a growing community of African entrepreneurs, the project continues gaining momentum toward transforming digital trade across Africa.",
+    image: "https://res.cloudinary.com/dmyrmlj5z/image/upload/v1776722721/Jammii_qbgkes.jpg",
+    link: "https://www.linkedin.com/pulse/beyond-buzzwords-translating-eu-africa-sme-summit-andrews-akoto-addo-jwcof",
+    linkLabel: "Read Full Story",
+  },
+  {
+    title: "3rd EU-Africa SME Summit — Co-MC, Innovator & Panellist",
+    location: "South Africa",
+    year: "2025",
+    description: "Andy co-hosted the 3rd EU-Africa SME Summit as Co-MC, Innovator, and Panellist, pitching JamiiTrade — his digital peer-to-peer learning ecosystem for African SMEs — to potential investors. He joined an Afreximbank panel on continental SME development linked to AfCFTA and the EU Global Gateway Facility. The Summit united European and African leaders to foster collaboration, innovation, and investment. Andy left grateful for the chance to help bridge gaps in capital access and opportunities across both regions.",
+    image: "https://res.cloudinary.com/dmyrmlj5z/image/upload/v1776711487/Screenshot_2026-04-20_173936_liwi1y.png",
+    link: "https://www.linkedin.com/posts/andrewsakotoaddo_the-3rd-eu-africa-sme-summit-held-at-the-activity-7343984280324169728-TkED?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMEU0oBmuEVSF2d1alirU9DNgVQXVqOKWc",
+    linkLabel: "Read Full Story",
+    video: "https://www.youtube.com/watch?v=8tNzJhQFni8",
+    videoLabel: "Watch Highlights",
+  },
+  {
+    title: "UNLEASH 2022 — SDG6 Thematic Facilitator",
+    location: "Mysuru, India",
+    year: "2022",
+    description: "Andy attended UNLEASH 2022 in Mysuru, India, where 1,000 innovators developed 200+ solutions for 7 SDGs. He facilitated the SDG6 track, mentoring teams through design thinking. \"People for Poop Management\" won $5,000 from Infosys for Most Innovative Solution. Fellow Ambassadors presented the Most Inclusive Solution award to \"Supergirls\" from the SDG4 track. Andy left grateful to UNLEASH leadership, partners, and his Reach for Change family.",
+    image: "https://res.cloudinary.com/dmyrmlj5z/image/upload/v1776721558/Unleash_Global_Innovation_Lab_o0labe.jpg",
+    link: "https://www.linkedin.com/posts/andrewsakotoaddo_unleash2022-globalgoals-unleashindia-activity-7008697292429922304-kZYF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMEU0oBmuEVSF2d1alirU9DNgVQXVqOKWc",
+    linkLabel: "Read Full Story",
+  },
 ];
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -229,21 +255,33 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
             </h2>
           </Reveal>
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            {highlights.map((item: any, i: number) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <div style={{ display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 380px" : "380px 1fr", gap: "3rem", alignItems: "center", background: "#ffffff", borderRadius: "20px", padding: "2.5rem", border: "1px solid rgba(0,0,0,0.08)" }}>
-                  <div style={{ order: i % 2 === 0 ? 1 : 2 }}>
-                    <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", flexWrap: "wrap" }}>
-                      {item.year && <span style={{ background: "rgba(201,145,42,0.1)", color: "#C9912A", fontSize: "0.7rem", fontWeight: 700, padding: "0.3rem 0.8rem", borderRadius: "2rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{item.year}</span>}
-                      {item.location && <span style={{ color: "#4a6070", fontSize: "0.82rem", display: "flex", alignItems: "center" }}>{item.location}</span>}
-                    </div>
-                    <h3 className="font-serif" style={{ fontWeight: 600, color: "#0a1628", fontSize: "1.4rem", marginBottom: "1rem", lineHeight: 1.3 }}>{item.title}</h3>
-                    <p style={{ color: "#4a6070", fontSize: "0.9rem", lineHeight: 1.75 }}>{item.description}</p>
-                  </div>
-                  <div style={{ order: i % 2 === 0 ? 2 : 1, position: "relative", height: "260px", borderRadius: "12px", overflow: "hidden" }}>
-                    <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} unoptimized />
-                  </div>
-                </div>
+  {highlights.map((item: any, i: number) => (
+    <Reveal key={i} delay={i * 0.1}>
+      <div style={{ display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 380px" : "380px 1fr", gap: "3rem", alignItems: "center", background: "#ffffff", borderRadius: "20px", padding: "2.5rem", border: "1px solid rgba(0,0,0,0.08)" }}>
+        <div style={{ order: i % 2 === 0 ? 1 : 2 }}>
+          <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", flexWrap: "wrap" }}>
+            {item.year && <span style={{ background: "rgba(201,145,42,0.1)", color: "#C9912A", fontSize: "0.7rem", fontWeight: 700, padding: "0.3rem 0.8rem", borderRadius: "2rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>{item.year}</span>}
+            {item.location && <span style={{ color: "#4a6070", fontSize: "0.82rem", display: "flex", alignItems: "center" }}>{item.location}</span>}
+          </div>
+          <h3 className="font-serif" style={{ fontWeight: 600, color: "#0a1628", fontSize: "1.4rem", marginBottom: "1rem", lineHeight: 1.3 }}>{item.title}</h3>
+          <p style={{ color: "#4a6070", fontSize: "0.9rem", lineHeight: 1.75, marginBottom: "1.2rem" }}>{item.description}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.82rem", fontWeight: 700, color: "#0a1628", borderBottom: "2px solid #C9912A", paddingBottom: "2px", textDecoration: "none" }}>
+                {item.linkLabel || "Read Full Story"} <HiArrowRight size={13} />
+              </a>
+            )}
+            {item.video && (
+              <a href={item.video} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.82rem", fontWeight: 600, color: "#C9912A", border: "1.5px solid #C9912A", padding: "0.3rem 0.9rem", borderRadius: "2rem", textDecoration: "none" }}>
+                ▶ {item.videoLabel || "Watch Video"}
+              </a>
+            )}
+          </div>
+        </div>
+        <div style={{ order: i % 2 === 0 ? 2 : 1, position: "relative", height: "260px", borderRadius: "12px", overflow: "hidden" }}>
+          <img src={item.image} alt={item.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+      </div>
               </Reveal>
             ))}
           </div>

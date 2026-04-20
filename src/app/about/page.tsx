@@ -72,9 +72,10 @@ export default function About() {
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>About Andy</span>
                 </div>
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
-                  The Story<br />
-                  <em style={{ color: "#C9912A" }}>Behind the Work</em>
-                </h1>
+  The Story<br />
+  <em style={{ color: "#C9912A" }}>Behind</em><br />
+  <em style={{ color: "#C9912A" }}>the Work</em>
+</h1>
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
                  A Pan-African social entrepreneur and ecosystem builder passionately committed to creating shared value across the continent. From Ghana&apos;s social sector to innovation labs in Shenzhen, India, Kigali, and Rabat, and developing entrepreneurship ecosystems in Accra, while fostering continental gatherings and intra-African trade across Africa.
                 </p>
