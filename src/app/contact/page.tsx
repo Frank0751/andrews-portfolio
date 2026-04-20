@@ -128,7 +128,7 @@ export default function Contact() {
                 </div>
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
                   Let&apos;s Build Something<br />
-                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>Together</em>
+                  <em style={{ color: "#C9912A" }}>Together</em>
                 </h1>
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
                   Open to conversations about partnerships, speaking engagements,
@@ -159,11 +159,11 @@ export default function Contact() {
                 </div>
                 <div style={{ position: "absolute", bottom: "-12px", left: "-16px", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>10+</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>10+</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Organisations<br />Served</span>
                   </div>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>3</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>3</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Continents<br />Active</span>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function Contact() {
               <Reveal>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>Contact</span>
                 <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "1.5rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                  Open to the <em style={{ fontStyle: "italic", color: "#00739A" }}>Right Conversations</em>
+                  Open to the <em style={{ color: "#00739A" }}>Right Conversations</em>
                 </h2>
                 <p style={{ color: "#4a6070", lineHeight: 1.8, marginBottom: "2.5rem", fontSize: "0.97rem" }}>
                   Whether you have a partnership opportunity, a speaking engagement,
@@ -243,20 +243,20 @@ export default function Contact() {
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                         <div>
                           <label style={{ display: "block", fontSize: "0.75rem", fontWeight: 600, color: "#0a1628", marginBottom: "0.4rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Name</label>
-                          <input value={formState.name} onChange={e => setFormState({ ...formState, name: e.target.value })} placeholder="Your name" style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", fontFamily: "Outfit, sans-serif" }} />
+                          <input value={formState.name} onChange={e => setFormState({ ...formState, name: e.target.value })} placeholder="Your name" style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", fontFamily: "var(--font-body)" }} />
                         </div>
                         <div>
                           <label style={{ display: "block", fontSize: "0.75rem", fontWeight: 600, color: "#0a1628", marginBottom: "0.4rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Email</label>
-                          <input type="email" value={formState.email} onChange={e => setFormState({ ...formState, email: e.target.value })} placeholder="your@email.com" style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", fontFamily: "Outfit, sans-serif" }} />
+                          <input type="email" value={formState.email} onChange={e => setFormState({ ...formState, email: e.target.value })} placeholder="your@email.com" style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", fontFamily: "var(--font-body)" }} />
                         </div>
                       </div>
                       <div>
                         <label style={{ display: "block", fontSize: "0.75rem", fontWeight: 600, color: "#0a1628", marginBottom: "0.4rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Subject</label>
-                        <input value={formState.subject} onChange={e => setFormState({ ...formState, subject: e.target.value })} placeholder="What is this about?" style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", fontFamily: "Outfit, sans-serif" }} />
+                        <input value={formState.subject} onChange={e => setFormState({ ...formState, subject: e.target.value })} placeholder="What is this about?" style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", fontFamily: "var(--font-body)" }} />
                       </div>
                       <div>
                         <label style={{ display: "block", fontSize: "0.75rem", fontWeight: 600, color: "#0a1628", marginBottom: "0.4rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Message</label>
-                        <textarea value={formState.message} onChange={e => setFormState({ ...formState, message: e.target.value })} placeholder="Tell Andy what you have in mind..." rows={5} style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", resize: "vertical", fontFamily: "Outfit, sans-serif" }} />
+                        <textarea value={formState.message} onChange={e => setFormState({ ...formState, message: e.target.value })} placeholder="Tell Andy what you have in mind..." rows={5} style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "8px", border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem", color: "#0a1628", outline: "none", background: "#fafafa", resize: "vertical", fontFamily: "var(--font-body)" }} />
                       </div>
                       {error && (
                         <p style={{ color: "#c0392b", fontSize: "0.82rem", marginTop: "-0.5rem" }}>{error}</p>
@@ -264,7 +264,7 @@ export default function Contact() {
                       <button
                         onClick={handleSubmit}
                         disabled={sending}
-                        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", padding: "0.9rem 2rem", background: sending ? "rgba(201,145,42,0.6)" : "#C9912A", color: "#0a1628", fontWeight: 700, borderRadius: "3rem", border: "none", fontSize: "0.9rem", cursor: sending ? "not-allowed" : "pointer", transition: "all 0.2s", width: "100%", fontFamily: "Outfit, sans-serif" }}
+                        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", padding: "0.9rem 2rem", background: sending ? "rgba(201,145,42,0.6)" : "#C9912A", color: "#0a1628", fontWeight: 700, borderRadius: "3rem", border: "none", fontSize: "0.9rem", cursor: sending ? "not-allowed" : "pointer", transition: "all 0.2s", width: "100%", fontFamily: "var(--font-body)" }}
                       >
                         {sending ? "Sending..." : <><span>Send Message</span> <HiArrowRight /></>}
                       </button>
@@ -282,7 +282,7 @@ export default function Contact() {
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
           <Reveal style={{ textAlign: "center", maxWidth: "36rem", margin: "0 auto 3rem" }}>
             <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, fontSize: "clamp(1.8rem,3vw,2.5rem)", marginBottom: "0.75rem" }}>
-              Connect on <em style={{ fontStyle: "italic", color: "#00739A" }}>Social Media</em>
+              Connect on <em style={{ color: "#00739A" }}>Social Media</em>
             </h2>
             <p style={{ color: "#4a6070", fontSize: "0.95rem" }}>Follow the journey across platforms.</p>
           </Reveal>

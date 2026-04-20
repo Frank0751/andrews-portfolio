@@ -132,7 +132,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: any[] })
                 </div>
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
                   Moments Across<br />
-                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>the Continent</em>
+                  <em style={{ color: "#C9912A" }}>the Continent</em>
                 </h1>
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
                   A visual record of summits, panels, conversations, and the people and places that define this journey.
@@ -181,7 +181,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: any[] })
               <Reveal style={{ marginBottom: "2.5rem" }}>
                 <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", display: "block" }}>Videos</span>
                 <h2 className="font-serif" style={{ color: "#0a1628", fontSize: "clamp(1.8rem,3vw,2.4rem)", lineHeight: 1.15 }}>
-                  Watch <em style={{ fontStyle: "italic", color: "#00739A" }}>Andy in Action</em>
+                  Watch <em style={{ color: "#00739A" }}>Andy in Action</em>
                 </h2>
               </Reveal>
               <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2rem" }}>
@@ -214,7 +214,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: any[] })
                 <Reveal style={{ marginBottom: "2.5rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", display: "block" }}>Photos</span>
                   <h2 className="font-serif" style={{ color: "#0a1628", fontSize: "clamp(1.8rem,3vw,2.4rem)", lineHeight: 1.15 }}>
-                    A Visual <em style={{ fontStyle: "italic", color: "#00739A" }}>Journey</em>
+                    A Visual <em style={{ color: "#00739A" }}>Journey</em>
                   </h2>
                 </Reveal>
               )}

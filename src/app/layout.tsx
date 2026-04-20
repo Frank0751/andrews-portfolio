@@ -27,10 +27,16 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+          rel="stylesheet"
+        />
+        <link href="https://fonts.cdnfonts.com/css/aeonik" rel="stylesheet" />
       </head>
       <body>
         <Nav />

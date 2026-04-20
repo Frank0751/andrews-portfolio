@@ -126,9 +126,9 @@ export default async function Writing() {
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Thought Leadership</span>
                 </div>
-                <h1 style={{ fontFamily: "'Playfair Display', serif", lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
+                <h1 style={{ fontFamily: "var(--font-heading)", lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
                   Ideas Worth<br />
-                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>Sharing</em>
+                  <em style={{ color: "#C9912A" }}>Sharing</em>
                 </h1>
                 <p style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
                   Perspectives on Pan-African development, shared value, SME growth, and the systems that shape the continent&apos;s future.
@@ -154,11 +154,11 @@ export default async function Writing() {
                 </div>
                 <div style={{ position: "absolute", bottom: "-12px", left: "-16px", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "'Playfair Display', serif" }}>{allArticles.length}</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>{allArticles.length}</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Published<br />Articles</span>
                   </div>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "'Playfair Display', serif" }}>10+</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>10+</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Topics<br />Covered</span>
                   </div>
                 </div>
@@ -177,8 +177,8 @@ export default async function Writing() {
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
           <div style={{ marginBottom: "3rem" }}>
             <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", display: "block" }}>All Writing</span>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", color: "#0a1628", lineHeight: 1.15, fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-              Latest <em style={{ fontStyle: "italic", color: "#00739A" }}>Articles</em>
+            <h2 style={{ fontFamily: "var(--font-heading)", color: "#0a1628", lineHeight: 1.15, fontSize: "clamp(2rem,3.5vw,3rem)" }}>
+              Latest <em style={{ color: "#00739A" }}>Articles</em>
             </h2>
           </div>
 
@@ -193,7 +193,7 @@ export default async function Writing() {
                   <span style={{ color: "rgba(0,0,0,0.2)" }}>·</span>
                   <span style={{ fontSize: "0.78rem", color: "#4a6070" }}>{featured.date}</span>
                 </div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: "#0a1628", fontSize: "clamp(1.5rem,2.5vw,2rem)", lineHeight: 1.25, marginBottom: "1rem" }}>{featured.title}</h3>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, color: "#0a1628", fontSize: "clamp(1.5rem,2.5vw,2rem)", lineHeight: 1.25, marginBottom: "1rem" }}>{featured.title}</h3>
                 <p style={{ color: "#4a6070", fontSize: "0.95rem", lineHeight: 1.75, marginBottom: "1.5rem" }}>{featured.excerpt}</p>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#C9912A", fontSize: "0.88rem", fontWeight: 700 }}>
                   Read Article <HiArrowRight />
@@ -219,7 +219,7 @@ export default async function Writing() {
                     <span style={{ color: "rgba(0,0,0,0.2)" }}>·</span>
                     <span style={{ fontSize: "0.72rem", color: "#4a6070" }}>{article.date}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: "#0a1628", fontSize: "1rem", lineHeight: 1.35, marginBottom: "0.5rem" }}>{article.title}</h3>
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, color: "#0a1628", fontSize: "1rem", lineHeight: 1.35, marginBottom: "0.5rem" }}>{article.title}</h3>
                   <p style={{ color: "#4a6070", fontSize: "0.82rem", lineHeight: 1.6, marginBottom: "0.9rem", flex: 1 }}>{article.excerpt}</p>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", color: "#C9912A", fontSize: "0.75rem", fontWeight: 600 }}>
                     Read <HiArrowRight size={11} />
@@ -237,8 +237,8 @@ export default async function Writing() {
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "2rem" }}>
             <div>
               <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", display: "block" }}>Topics Covered</span>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", color: "#0a1628", lineHeight: 1.15, fontSize: "clamp(1.8rem,3vw,2.5rem)" }}>
-                Writing Across <em style={{ fontStyle: "italic", color: "#00739A" }}>the Ecosystem</em>
+              <h2 style={{ fontFamily: "var(--font-heading)", color: "#0a1628", lineHeight: 1.15, fontSize: "clamp(1.8rem,3vw,2.5rem)" }}>
+                Writing Across <em style={{ color: "#00739A" }}>the Ecosystem</em>
               </h2>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", maxWidth: "500px" }}>
@@ -255,8 +255,8 @@ export default async function Writing() {
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "2rem" }}>
             <div>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", color: "#ffffff", lineHeight: 1.15, fontSize: "clamp(1.8rem,3vw,2.5rem)", marginBottom: "0.75rem" }}>
-                Read more on <em style={{ fontStyle: "italic", color: "#C9912A" }}>Medium</em>
+              <h2 style={{ fontFamily: "var(--font-heading)", color: "#ffffff", lineHeight: 1.15, fontSize: "clamp(1.8rem,3vw,2.5rem)", marginBottom: "0.75rem" }}>
+                Read more on <em style={{ color: "#C9912A" }}>Medium</em>
               </h2>
               <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", maxWidth: "28rem" }}>
                 Follow Andy on Medium for regular perspectives on Pan-African development, shared value, and ecosystem building.
@@ -272,7 +272,7 @@ export default async function Writing() {
       {/* FOOTER */}
       <footer style={{ background: "#0a1628", borderTop: "1px solid rgba(255,255,255,0.08)", padding: "2rem 5%" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-          <Link href="/" style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", fontWeight: 600, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
+          <Link href="/" style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", fontWeight: 600, color: "rgba(255,255,255,0.7)", textDecoration: "none" }}>
             Andrews Akoto-Addo <span style={{ color: "#C9912A" }}>(Andy)</span>
           </Link>
           <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.75rem" }}>Pan-African Social Entrepreneur · Accra, Ghana</span>

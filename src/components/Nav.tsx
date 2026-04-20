@@ -59,7 +59,7 @@ export default function Nav() {
           justify-content: space-between;
         }
         .nav-logo {
-          font-family: "Playfair Display", serif;
+          font-family: var(--font-heading);
           font-size: 1.3rem;
           font-weight: 700;
           color: #ffffff;
@@ -116,7 +116,7 @@ export default function Nav() {
         }
         .nav-overlay.open { transform: translateX(0); }
         .nav-overlay-link {
-          font-family: "Playfair Display", serif;
+          font-family: var(--font-heading);
           font-size: clamp(2rem, 7vw, 3rem);
           font-weight: 700;
           color: rgba(255,255,255,0.85);

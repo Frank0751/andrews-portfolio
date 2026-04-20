@@ -121,7 +121,7 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
                 </div>
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
                   Creating<br />
-                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>Lasting Change</em>
+                  <em style={{ color: "#C9912A" }}>Lasting Change</em>
                 </h1>
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
                   From Accra to Shenzhen, to Stockholm, to Johannesburg, to Kigali, to Rabat. The work spans borders, sectors, and generations.
@@ -142,11 +142,11 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
                 </div>
                 <div style={{ position: "absolute", bottom: "-12px", left: "-16px", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>3</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>3</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Continents<br />of Active Work</span>
                   </div>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>1000+</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>1000+</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Young Leaders<br />Engaged</span>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(6,1fr)" }}>
           {numbers.map((s: any, i: number, arr: any[]) => (
             <div key={i} style={{ padding: "1.6rem 1rem", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
-              <div style={{ fontFamily: "Playfair Display, serif", fontSize: "1.8rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.62rem", marginTop: "0.3rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.label}</div>
             </div>
           ))}
@@ -178,7 +178,7 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
           <Reveal style={{ textAlign: "center", maxWidth: "40rem", margin: "0 auto 4rem" }}>
             <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Impact Areas</span>
             <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "1rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-              Where the Work <em style={{ fontStyle: "italic", color: "#00739A" }}>Happens</em>
+              Where the Work <em style={{ color: "#00739A" }}>Happens</em>
             </h2>
             <p style={{ color: "#4a6070", lineHeight: 1.7 }}>Six dimensions of impact that together create ecosystems where African businesses and their communities thrive.</p>
           </Reveal>
@@ -217,7 +217,7 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
           <Reveal style={{ textAlign: "center", maxWidth: "40rem", margin: "0 auto 4rem" }}>
             <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Key Moments</span>
             <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-              Defining <em style={{ fontStyle: "italic", color: "#00739A" }}>Engagements</em>
+              Defining <em style={{ color: "#00739A" }}>Engagements</em>
             </h2>
           </Reveal>
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
@@ -248,7 +248,7 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
         <Reveal style={{ position: "relative", zIndex: 10, maxWidth: "40rem", margin: "0 auto", padding: "0 5%", textAlign: "center" }}>
           <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1.5rem", display: "block" }}>Work Together</span>
           <h2 className="font-serif" style={{ color: "#ffffff", lineHeight: 1.15, marginBottom: "1.5rem", fontSize: "clamp(2rem,3.5vw,3.2rem)" }}>
-            Let&apos;s Create Impact <em style={{ fontStyle: "italic", color: "#C9912A" }}>Together</em>
+            Let&apos;s Create Impact <em style={{ color: "#C9912A" }}>Together</em>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.75, marginBottom: "2.5rem", fontSize: "1rem" }}>
             Open to conversations about partnerships, speaking engagements, ecosystem building, and shared value opportunities across Africa.

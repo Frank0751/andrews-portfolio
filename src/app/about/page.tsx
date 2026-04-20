@@ -73,7 +73,7 @@ export default function About() {
                 </div>
                 <h1 className="animate-fade-up delay-2 font-serif" style={{ lineHeight: 1.05, marginBottom: "1.2rem", fontSize: "clamp(2.8rem,5vw,4.5rem)", color: "#ffffff", fontWeight: 700 }}>
                   The Story<br />
-                  <em style={{ fontStyle: "italic", color: "#C9912A" }}>Behind the Work</em>
+                  <em style={{ color: "#C9912A" }}>Behind the Work</em>
                 </h1>
                 <p className="animate-fade-up delay-3" style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, maxWidth: "30rem", marginBottom: "2rem", fontSize: "1rem" }}>
                  A Pan-African social entrepreneur and ecosystem builder passionately committed to creating shared value across the continent. From Ghana&apos;s social sector to innovation labs in Shenzhen, India, Kigali, and Rabat, and developing entrepreneurship ecosystems in Accra, while fostering continental gatherings and intra-African trade across Africa.
@@ -94,11 +94,11 @@ export default function About() {
                 </div>
                 <div style={{ position: "absolute", bottom: "-12px", left: "-16px", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>12+</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>12+</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Years of Social<br />Entrepreneurship</span>
                   </div>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>3</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>3</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Continents<br />Operating across</span>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function About() {
             { num: "3", label: "Continents" },
           ].map((s, i, arr) => (
             <div key={i} style={{ padding: "1.6rem 2rem", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
-              <div style={{ fontFamily: "Playfair Display, serif", fontSize: "2.2rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontFamily: "var(--font-heading)", fontSize: "2.2rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.7rem", marginTop: "0.3rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>{s.label}</div>
             </div>
           ))}
@@ -336,7 +336,7 @@ export default function About() {
         <Reveal style={{ position: "relative", zIndex: 10, maxWidth: "40rem", margin: "0 auto", padding: "0 5%", textAlign: "center" }}>
           <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1.5rem", display: "block" }}>Work Together</span>
           <h2 className="font-serif" style={{ color: "#ffffff", lineHeight: 1.15, marginBottom: "1.5rem", fontSize: "clamp(2rem,3.5vw,3.2rem)" }}>
-            Ready to Build Something <em style={{ fontStyle: "italic", color: "#C9912A" }}>Meaningful?</em>
+            Ready to Build Something <em style={{ color: "#C9912A" }}>Meaningful?</em>
           </h2>
           <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.75, marginBottom: "2.5rem", fontSize: "1rem" }}>
             Open to conversations about partnerships, speaking engagements, ecosystem building, and shared value opportunities across Africa.
