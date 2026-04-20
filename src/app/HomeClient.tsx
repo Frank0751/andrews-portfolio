@@ -107,7 +107,7 @@ function HeroName() {
         src="https://res.cloudinary.com/dmyrmlj5z/image/upload/v1776681402/Andy_s_Logo_f2djs1.png"
         alt="Andy's logo"
         style={{
-          height: "clamp(90px, 10vw, 110px)",
+          height: "clamp(90px, 10vw, 130px)",
           width: "auto",
           flexShrink: 0,
           display: "block",
