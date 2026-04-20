@@ -109,6 +109,11 @@ export default async function Writing() {
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
           .page-hero-photo { height: 320px; margin-top: 2rem; }
+          a[style*='gridTemplateColumns: "1fr 480px"'] { grid-template-columns: 1fr !important; }
+          div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media (max-width: 600px) {
+          div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: 1fr !important; }
         }
       `}</style>
 

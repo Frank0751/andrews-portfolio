@@ -113,6 +113,10 @@ export default function GalleryClient({ galleryItems }: { galleryItems: any[] })
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
           .page-hero-matrix { height: 260px; margin-top: 2rem; }
+          div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media (max-width: 600px) {
+          div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: 1fr !important; }
         }
       `}</style>
 

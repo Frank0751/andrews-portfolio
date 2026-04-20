@@ -102,6 +102,14 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
           .page-hero-photo { height: 320px; margin-top: 2rem; }
+          div[style*='gridTemplateColumns: "repeat(6,1fr)"'] { grid-template-columns: repeat(3,1fr) !important; }
+          div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: 1fr !important; }
+          div[style*='gridTemplateColumns: "1fr 380px"'],
+          div[style*='gridTemplateColumns: "380px 1fr"'] { grid-template-columns: 1fr !important; padding: 1.5rem !important; }
+          div[style*="height: \"260px\""] { height: 220px !important; }
+        }
+        @media (max-width: 600px) {
+          div[style*='gridTemplateColumns: "repeat(6,1fr)"'] { grid-template-columns: repeat(2,1fr) !important; }
         }
       `}</style>
 

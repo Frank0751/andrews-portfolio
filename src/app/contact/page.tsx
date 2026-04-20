@@ -106,9 +106,13 @@ export default function Contact() {
           .page-hero-matrix { height: 260px; margin-top: 2rem; }
           .page-2col { grid-template-columns: 1fr; gap: 2.5rem; }
           .page-3col { grid-template-columns: 1fr; }
+          div[style*='gridTemplateColumns: "1fr 1.2fr"'] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          div[style*='gridTemplateColumns: "repeat(4,1fr)"'] { grid-template-columns: repeat(2,1fr) !important; }
+          div[style*='gridTemplateColumns: "1fr 1fr"'] { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 600px) {
           .page-3col { grid-template-columns: 1fr; }
+          div[style*='gridTemplateColumns: "repeat(4,1fr)"'] { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
