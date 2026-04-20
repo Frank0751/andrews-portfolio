@@ -71,12 +71,12 @@ export default function Contact() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "ff650bb6-9498-40bf-a6b4-e7668902b15e",
+          access_key: "55ac3558-2d82-4b52-828a-6998ffb4d539",
           name: formState.name,
           email: formState.email,
           subject: formState.subject || "New message from Andy's Portfolio",
           message: formState.message,
-          from_name: "Andy's Portfolio",
+          from_name: "Andy\u2019s Portfolio",
         }),
       });
       const data = await response.json();
