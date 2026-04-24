@@ -51,7 +51,7 @@ const fallbackProjects = [
     description: "Championing intra-African trade by serving as the Ghana Focal Point for JamiiTrade, a curated peer-to-peer community for SME trading in Africa.",
     tags: ["Intra-African Trade", "SMEs", "AfCFTA", "Ecosystem"],
     image: null,
-    fallbackImage: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776547378/Jamiitrade_odm5bw.png",
+    fallbackImage: "https://api.microlink.io/?url=https://jamiitrade.africa/u/andrews&screenshot=true&meta=false&embed=screenshot.url",
     link: "https://jamiitrade.africa/u/andrews",
   },
   {
@@ -75,7 +75,7 @@ const fallbackProjects = [
     description: "A research paper examining the impact of emotional labour on workers in Ghana's service sector.",
     tags: ["Research", "Emotional Labour", "Human Capital", "Ghana"],
     image: null,
-    fallbackImage: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776127735/655937334_18112927921735492_7610053134791253292_n_w6uiqa.jpg",
+    fallbackImage: "https://api.microlink.io/?url=https://www.knust.edu.gh&screenshot=true&meta=false&embed=screenshot.url",
     link: "https://www.linkedin.com/in/andrewsakotoaddo",
   },
 ];

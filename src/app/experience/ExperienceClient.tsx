@@ -341,6 +341,8 @@ export default function ExperienceClient({ experience: sanityExperience }: { exp
                   onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(201,145,42,0.1)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
                 >
+                 
+                  
                   <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: 0 }}>
                     {/* Cover image */}
                     <div style={{ position: "relative", minHeight: "200px" }}>

@@ -27,7 +27,7 @@ const fallbackManualArticles: Article[] = [
     title: "Beyond Buzzwords",
     excerpt: "Translating EU-Africa SME Summit insights into action for a connected continent.",
     link: "https://www.linkedin.com/pulse/beyond-buzzwords-translating-eu-africa-sme-summit-andrews-akoto-addo-jwcof/",
-    thumb: "https://miro.medium.com/v2/resize:fill:320:214/1*hOYobDq9EngvmvLaMiF3mA.jpeg",
+    thumb: "https://api.microlink.io/?url=https://www.linkedin.com/pulse/beyond-buzzwords-translating-eu-africa-sme-summit-andrews-akoto-addo-jwcof/&screenshot=true&meta=false&embed=screenshot.url",
   },
   {
     source: "Discourse Channel",
