@@ -27,7 +27,7 @@ const fallbackManualArticles: Article[] = [
     title: "Beyond Buzzwords",
     excerpt: "Translating EU-Africa SME Summit insights into action for a connected continent.",
     link: "https://www.linkedin.com/pulse/beyond-buzzwords-translating-eu-africa-sme-summit-andrews-akoto-addo-jwcof/",
-    thumb: "https://api.microlink.io/?url=https://www.linkedin.com/pulse/beyond-buzzwords-translating-eu-africa-sme-summit-andrews-akoto-addo-jwcof/&screenshot=true&meta=false&embed=screenshot.url",
+    thumb: "https://res.cloudinary.com/dmyrmlj5z/image/upload/q_auto/f_auto/v1776711487/Screenshot_2026-04-20_173936_liwi1y.png",
   },
   {
     source: "Discourse Channel",
@@ -108,7 +108,8 @@ export default async function Writing() {
         .page-hero-photo { position: relative; height: 500px; }
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
-          .page-hero-photo { height: 320px; margin-top: 2rem; }
+          .page-hero-photo { order: -1 !important; height: 320px; margin-bottom: 1.5rem; }
+          .page-hero-text { order: 1; }
           a[style*='gridTemplateColumns: "1fr 480px"'] { grid-template-columns: 1fr !important; }
           div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: repeat(2,1fr) !important; }
         }
@@ -127,7 +128,7 @@ export default async function Writing() {
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="page-hero-grid">
-              <div>
+              <div className="page-hero-text">
                 <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Thought Leadership</span>
                 </div>

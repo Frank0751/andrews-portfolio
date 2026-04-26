@@ -23,6 +23,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "medium.com",
       },
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
+      },
+      {
+        protocol: "https",
+        hostname: "**.microlink.io",
+      },
     ],
   },
 };
