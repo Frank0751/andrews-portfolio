@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowRight } from "react-icons/hi";
-import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,10 +32,10 @@ function Reveal({ children, className = "", delay = 0, style = {} }: {
 }
 
 const languages = [
-  { lang: "English", level: "Native" },
-  { lang: "Twi", level: "Native" },
-  { lang: "Ewe", level: "Native" },
-  { lang: "French", level: "Elementary" },
+  { lang: "English", level: "Native", pct: 100 },
+  { lang: "Twi", level: "Native", pct: 100 },
+  { lang: "Ewe", level: "Native", pct: 100 },
+  { lang: "French", level: "Elementary", pct: 25 },
 ];
 
 export default function About() {
@@ -47,7 +47,8 @@ export default function About() {
   .page-hero-photo { position: relative; height: 500px; }
   @media (max-width: 900px) {
     .page-hero-grid { grid-template-columns: 1fr !important; }
-    .page-hero-photo { height: 320px; margin-top: 2rem; }
+    .page-hero-photo { order: -1 !important; height: 320px; margin-bottom: 1.5rem; }
+    .page-hero-text { order: 1; }
     .page-2col { grid-template-columns: 1fr !important; gap: 2.5rem; }
     div[style*="gridTemplateColumns: \"repeat(3,1fr)\""] { grid-template-columns: 1fr !important; }
     div[style*="gridTemplateColumns: \"repeat(4,1fr)\""] { grid-template-columns: 1fr 1fr !important; }
@@ -67,7 +68,7 @@ export default function About() {
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="page-hero-grid">
-              <div>
+              <div className="page-hero-text">
                 <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>About Andy</span>
                 </div>
@@ -209,11 +210,16 @@ export default function About() {
               <Reveal delay={0.2}>
                 <div style={{ background: "#ffffff", borderRadius: "12px", padding: "1.8rem", border: "1px solid rgba(0,0,0,0.08)" }}>
                   <div style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "1.2rem" }}>Languages</div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
                     {languages.map((l) => (
-                      <div key={l.lang} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <span style={{ fontSize: "0.9rem", color: "#0a1628", fontWeight: 500 }}>{l.lang}</span>
-                        <span style={{ fontSize: "0.72rem", color: "#4a6070", background: "#F5F2EA", padding: "0.2rem 0.7rem", borderRadius: "2rem", border: "1px solid rgba(0,0,0,0.08)" }}>{l.level}</span>
+                      <div key={l.lang}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.3rem" }}>
+                          <span style={{ fontSize: "0.9rem", color: "#0a1628", fontWeight: 500 }}>{l.lang}</span>
+                          <span style={{ fontSize: "0.68rem", color: "#4a6070", background: "#F5F2EA", padding: "0.15rem 0.6rem", borderRadius: "2rem", border: "1px solid rgba(0,0,0,0.08)" }}>{l.level}</span>
+                        </div>
+                        <div style={{ height: "5px", borderRadius: "3px", background: "rgba(0,0,0,0.07)", overflow: "hidden" }}>
+                          <div style={{ height: "100%", borderRadius: "3px", background: l.pct === 100 ? "#C9912A" : "rgba(201,145,42,0.45)", width: `${l.pct}%`, transition: "width 1s ease" }} />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -228,8 +234,9 @@ export default function About() {
                     {[
                       { href: "https://www.linkedin.com/in/andrewsakotoaddo", icon: <FaLinkedinIn size={14} />, label: "linkedin.com/in/andrewsakotoaddo" },
                       { href: "https://andrewakotoaddo.medium.com", icon: <FaMediumM size={14} />, label: "andrewakotoaddo.medium.com" },
-                      { href: "https://www.instagram.com/andy.oneafrica", icon: <FaInstagram size={14} />, label: "@andy.oneafrica" },
-                      { href: "https://web.facebook.com/andy.oneafrica", icon: <FaFacebookF size={14} />, label: "@andy.oneafrica" },
+                      { href: "https://www.instagram.com/andrewsakotoaddo", icon: <FaInstagram size={14} />, label: "@andrewsakotoaddo" },
+                      { href: "https://web.facebook.com/andrew.mul", icon: <FaFacebookF size={14} />, label: "andrew.mul" },
+                      { href: "https://wa.me/233551441428", icon: <FaWhatsapp size={14} />, label: "WhatsApp" },
                     ].map((item, i) => (
                       <a key={i} href={item.href} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none", color: "#2d3f4e", fontSize: "0.88rem" }}>
                         <div style={{ width: "2rem", height: "2rem", borderRadius: "50%", background: "rgba(201,145,42,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#C9912A", flexShrink: 0 }}>
@@ -253,9 +260,6 @@ export default function About() {
             <div>
               <Reveal>
                 <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Affiliations & Networks</span>
-                <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "2rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                 
-                </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                   {[
                     "Shared Value Africa (SVA)",
@@ -284,9 +288,6 @@ export default function About() {
             <div>
               <Reveal delay={0.15}>
                 <span style={{ color: "#C9912A", fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem", display: "block" }}>Current Focus</span>
-                <h2 className="font-serif" style={{ color: "#0a1628", lineHeight: 1.15, marginBottom: "2rem", fontSize: "clamp(2rem,3.5vw,3rem)" }}>
-                
-                </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                   {[
                     { org: "Shared Value Africa", role: "MD Ghana & Head of New Business", href: "https://www.svai.africa" },

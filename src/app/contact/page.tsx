@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowRight, HiMail, HiLocationMarker } from "react-icons/hi";
-import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -51,6 +51,7 @@ const socials = [
   { icon: <FaMediumM size={18} />, label: "Medium", handle: "@andrewakotoaddo", href: "https://andrewakotoaddo.medium.com" },
   { icon: <FaInstagram size={18} />, label: "Instagram", handle: "@andrewsakotoaddo", href: "https://www.instagram.com/andrewsakotoaddo" },
   { icon: <FaFacebookF size={18} />, label: "Facebook", handle: "andrew.mul", href: "https://web.facebook.com/andrew.mul" },
+  { icon: <FaWhatsapp size={18} />, label: "WhatsApp", handle: "+233 55 144 1428", href: "https://wa.me/233551441428" },
 ];
 
 export default function Contact() {
@@ -102,8 +103,9 @@ export default function Contact() {
         .page-hero-matrix { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.6rem; height: 500px; }
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
-          .page-hero-photo { height: 320px; margin-top: 2rem; }
-          .page-hero-matrix { height: 260px; margin-top: 2rem; }
+          .page-hero-photo { order: -1 !important; height: 320px; margin-bottom: 1.5rem; }
+          .page-hero-text { order: 1; }
+          .page-hero-matrix { order: -1 !important; height: 260px; margin-bottom: 1.5rem; }
           .page-2col { grid-template-columns: 1fr; gap: 2.5rem; }
           .page-3col { grid-template-columns: 1fr; }
           div[style*='gridTemplateColumns: "1fr 1.2fr"'] { grid-template-columns: 1fr !important; gap: 2rem !important; }
@@ -126,7 +128,7 @@ export default function Contact() {
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="page-hero-grid">
-              <div>
+              <div className="page-hero-text">
                 <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Get In Touch</span>
                 </div>
@@ -290,7 +292,7 @@ export default function Contact() {
             </h2>
             <p style={{ color: "#4a6070", fontSize: "0.95rem" }}>Follow the journey across platforms.</p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: "1rem" }}>
             {socials.map((s, i) => (
               <Reveal key={i} delay={i * 0.08}>
                 <Link href={s.href} target="_blank"

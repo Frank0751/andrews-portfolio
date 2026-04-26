@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowRight, HiLocationMarker } from "react-icons/hi";
-import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { MdGroups, MdHandshake, MdMic, MdLightbulb, MdTrendingUp, MdCreate } from "react-icons/md";
 import { RiGlobalLine } from "react-icons/ri";
 
@@ -135,7 +135,8 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
         .home-hero-photo { position: relative; height: 500px; display: block; }
         @media (max-width: 900px) {
           .home-hero-grid { grid-template-columns: 1fr; }
-          .home-hero-photo { height: 380px; margin-top: 2rem; }
+          .home-hero-photo { order: -1; height: 340px; margin-bottom: 1.5rem; }
+          .home-hero-text { order: 1; }
           .home-who-grid { grid-template-columns: 1fr; gap: 2.5rem; }
           .home-impact-grid { grid-template-columns: repeat(2,1fr); }
           .home-articles-grid { grid-template-columns: repeat(2,1fr); }
@@ -160,7 +161,7 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="home-hero-grid">
-              <div>
+              <div className="home-hero-text">
                 <div className="animate-fade-in delay-1" style={{ marginBottom: "1.5rem" }}>
                   <HeroName />
                 </div>
@@ -202,6 +203,9 @@ export default function HomeClient({ testimonials: sanityTestimonials }: { testi
                   </Link>
                   <Link href="https://web.facebook.com/andrew.mul" target="_blank" style={{ width: "2rem", height: "2rem", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>
                     <FaFacebookF size={13} />
+                  </Link>
+                  <Link href="https://wa.me/233551441428" target="_blank" style={{ width: "2rem", height: "2rem", borderRadius: "50%", border: "1px solid rgba(37,211,102,0.35)", display: "flex", alignItems: "center", justifyContent: "center", color: "#25D366", textDecoration: "none" }}>
+                    <FaWhatsapp size={13} />
                   </Link>
                   <span style={{ width: "1px", height: "1rem", background: "rgba(255,255,255,0.15)", margin: "0 0.2rem" }} />
                   <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "rgba(255,255,255,0.45)", fontSize: "0.78rem" }}>

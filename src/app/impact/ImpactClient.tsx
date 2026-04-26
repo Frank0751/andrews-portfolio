@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HiArrowRight } from "react-icons/hi";
-import { MdGroups, MdHandshake, MdMic, MdLightbulb, MdTrendingUp } from "react-icons/md";
+import { MdGroups, MdHandshake, MdMic, MdLightbulb, MdTrendingUp, MdPublic, MdPeople } from "react-icons/md";
 import { RiGlobalLine } from "react-icons/ri";
 import { urlFor } from "@/lib/sanity";
 
@@ -43,12 +43,12 @@ const hardcodedImpactAreas = [
 ];
 
 const hardcodedNumbers = [
-  { num: "12+", label: "Years of Social Entrepreneurship" },
-  { num: "10+", label: "Organisations Served" },
-  { num: "12+", label: "Roles Held" },
-  { num: "3", label: "Continents Active" },
-  { num: "1000+", label: "Young Leaders Engaged" },
-  { num: "5+", label: "Countries of Active Work" },
+  { num: "12+", label: "Years of Social Entrepreneurship", icon: <MdTrendingUp size={20} /> },
+  { num: "10+", label: "Organisations Served", icon: <MdGroups size={20} /> },
+  { num: "12+", label: "Roles Held", icon: <MdHandshake size={20} /> },
+  { num: "3", label: "Continents Active", icon: <MdPublic size={20} /> },
+  { num: "1000+", label: "Young Leaders Engaged", icon: <MdPeople size={20} /> },
+  { num: "5+", label: "Countries of Active Work", icon: <RiGlobalLine size={20} /> },
 ];
 
 const hardcodedHighlights = [
@@ -125,17 +125,19 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
       <style>{`
         .page-hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 3rem; align-items: center; }
         .page-hero-photo { position: relative; height: 500px; }
+        .impact-numbers-grid { display: grid; grid-template-columns: repeat(6,1fr); }
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
-          .page-hero-photo { height: 320px; margin-top: 2rem; }
-          div[style*='gridTemplateColumns: "repeat(6,1fr)"'] { grid-template-columns: repeat(3,1fr) !important; }
+          .page-hero-photo { order: -1 !important; height: 320px; margin-bottom: 1.5rem; }
+          .page-hero-text { order: 1; }
+          .impact-numbers-grid { grid-template-columns: repeat(3,1fr) !important; }
           div[style*='gridTemplateColumns: "repeat(3,1fr)"'] { grid-template-columns: 1fr !important; }
           div[style*='gridTemplateColumns: "1fr 380px"'],
           div[style*='gridTemplateColumns: "380px 1fr"'] { grid-template-columns: 1fr !important; padding: 1.5rem !important; }
           div[style*="height: \"260px\""] { height: 220px !important; }
         }
         @media (max-width: 600px) {
-          div[style*='gridTemplateColumns: "repeat(6,1fr)"'] { grid-template-columns: repeat(2,1fr) !important; }
+          .impact-numbers-grid { grid-template-columns: repeat(2,1fr) !important; }
         }
       `}</style>
 
@@ -149,7 +151,7 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="page-hero-grid">
-              <div>
+              <div className="page-hero-text">
                 <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Impact</span>
                 </div>
@@ -196,9 +198,12 @@ export default function ImpactClient({ impact: sanityImpact }: { impact: any[] }
 
       {/* NUMBERS */}
       <div style={{ background: "#152035", borderTop: "1px solid rgba(255,255,255,0.08)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(6,1fr)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="impact-numbers-grid">
           {numbers.map((s: any, i: number, arr: any[]) => (
             <div key={i} style={{ padding: "1.6rem 1rem", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
+              {s.icon && (
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: "0.4rem", color: "#C9912A", opacity: 0.7 }}>{s.icon}</div>
+              )}
               <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.62rem", marginTop: "0.3rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.label}</div>
             </div>

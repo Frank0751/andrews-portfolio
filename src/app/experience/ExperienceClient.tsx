@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import { HiArrowRight, HiExternalLink } from "react-icons/hi";
+import { MdTrendingUp, MdLightbulb, MdRecordVoiceOver } from "react-icons/md";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -229,9 +230,9 @@ const earlyCareer = [
 ];
 
 const skills = [
-  { category: "Core Expertise", items: ["Business Development", "Partnership Linkages", "Fundraising", "Programme Management", "Ecosystem Building", "Shared Value Strategy"] },
-  { category: "Sector Knowledge", items: ["SME Development", "AfCFTA & Intra-African Trade", "Climate Innovation", "Digital Innovation", "Social Entrepreneurship", "SDGs"] },
-  { category: "Soft Skills", items: ["Conference Hosting", "Panel Moderation", "Public Speaking", "Strategic Communications", "Stakeholder Engagement", "Thought Leadership"] },
+  { category: "Core Expertise", icon: <MdTrendingUp size={24} />, color: "#C9912A", items: ["Business Development", "Partnership Linkages", "Fundraising", "Programme Management", "Ecosystem Building", "Shared Value Strategy"] },
+  { category: "Sector Knowledge", icon: <MdLightbulb size={24} />, color: "#00739A", items: ["SME Development", "AfCFTA & Intra-African Trade", "Climate Innovation", "Digital Innovation", "Social Entrepreneurship", "SDGs"] },
+  { category: "Soft Skills", icon: <MdRecordVoiceOver size={24} />, color: "#5a6f3a", items: ["Conference Hosting", "Panel Moderation", "Public Speaking", "Strategic Communications", "Stakeholder Engagement", "Thought Leadership"] },
 ];
 
 export default function ExperienceClient({ experience: sanityExperience }: { experience: any[] }) {
@@ -243,14 +244,17 @@ export default function ExperienceClient({ experience: sanityExperience }: { exp
         .exp-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
         .exp-grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
         .highlights-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; margin-top: 1.2rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
         @media (max-width: 1024px) {
           .exp-grid-3 { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width: 900px) {
           .page-hero-grid { grid-template-columns: 1fr; }
-          .page-hero-photo { height: 320px; margin-top: 2rem; }
+          .page-hero-photo { order: -1 !important; height: 320px; margin-bottom: 1.5rem; }
+          .page-hero-text { order: 1; }
           .exp-grid-2 { grid-template-columns: 1fr; }
           .highlights-row { grid-template-columns: repeat(2,1fr); }
+          .skills-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
           .exp-grid-3 { grid-template-columns: 1fr; }
@@ -268,7 +272,7 @@ export default function ExperienceClient({ experience: sanityExperience }: { exp
         <div style={{ position: "relative", zIndex: 10, width: "100%", padding: "8rem 0 4rem" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 5%" }}>
             <div className="page-hero-grid">
-              <div>
+              <div className="page-hero-text">
                 <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
                   <span style={{ color: "#C9912A", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Professional Journey</span>
                 </div>
@@ -295,11 +299,11 @@ export default function ExperienceClient({ experience: sanityExperience }: { exp
                 </div>
                 <div style={{ position: "absolute", bottom: "-12px", left: "-16px", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>14+</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>14+</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Roles Held<br />across Career</span>
                   </div>
                   <div style={{ background: "rgba(10,22,40,0.92)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "0.6rem 1rem", borderRadius: "8px", display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "Playfair Display, serif" }}>3</span>
+                    <span style={{ color: "#C9912A", fontSize: "1rem", fontWeight: 700, fontFamily: "var(--font-heading)" }}>3</span>
                     <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.68rem" }}>Current<br />Active Roles</span>
                   </div>
                 </div>
@@ -318,7 +322,7 @@ export default function ExperienceClient({ experience: sanityExperience }: { exp
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
           {[{ num: "12+", label: "Years of Impact" }, { num: "10+", label: "Organisations Served" }, { num: "3", label: "Current Roles" }, { num: "3", label: "Continents" }].map((s, i, arr) => (
             <div key={i} style={{ padding: "1.6rem 2rem", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none" }}>
-              <div style={{ fontFamily: "Playfair Display, serif", fontSize: "2.2rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontFamily: "var(--font-heading)", fontSize: "2.2rem", fontWeight: 700, color: "#C9912A", lineHeight: 1 }}>{s.num}</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.7rem", marginTop: "0.3rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>{s.label}</div>
             </div>
           ))}
@@ -525,20 +529,20 @@ export default function ExperienceClient({ experience: sanityExperience }: { exp
               Areas of <em style={{ color: "#00739A" }}>Expertise</em>
             </h2>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.5rem" }}>
+          <div className="skills-grid">
             {skills.map((group, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <div style={{ background: "#ffffff", borderRadius: "16px", padding: "2rem", border: "1px solid rgba(0,0,0,0.08)", height: "100%" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.5rem" }}>
-                    <div style={{ width: "3px", height: "1.4rem", background: "#C9912A", borderRadius: "2px" }} />
-                    <h3 style={{ fontWeight: 700, color: "#0a1628", fontSize: "0.88rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>{group.category}</h3>
+                <div style={{ background: "#ffffff", borderRadius: "16px", padding: "2rem", border: "1px solid rgba(0,0,0,0.08)", height: "100%", transition: "all 0.3s" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = `0 8px 32px ${group.color}20`; (e.currentTarget as HTMLDivElement).style.borderColor = group.color; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(0,0,0,0.08)"; }}
+                >
+                  <div style={{ width: "3rem", height: "3rem", borderRadius: "12px", background: `${group.color}15`, display: "flex", alignItems: "center", justifyContent: "center", color: group.color, marginBottom: "1.2rem" }}>
+                    {group.icon}
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                  <h3 style={{ fontWeight: 700, color: "#0a1628", fontSize: "0.88rem", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "1.2rem" }}>{group.category}</h3>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem" }}>
                     {group.items.map((item) => (
-                      <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                        <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#C9912A", flexShrink: 0 }} />
-                        <span style={{ color: "#2d3f4e", fontSize: "0.9rem" }}>{item}</span>
-                      </div>
+                      <span key={item} style={{ fontSize: "0.78rem", padding: "0.3rem 0.8rem", borderRadius: "2rem", background: `${group.color}10`, color: "#2d3f4e", border: `1px solid ${group.color}30`, fontWeight: 500 }}>{item}</span>
                     ))}
                   </div>
                 </div>

@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
-import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaMediumM, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+
+const WA_HREF = "https://wa.me/233551441428";
 
 const links = [
   { href: "/", label: "Home" },
@@ -145,6 +147,24 @@ export default function Nav() {
           transition: all 0.2s;
         }
         .nav-overlay-social:hover { border-color: #C9912A; color: #C9912A; }
+        .nav-wa-float {
+          position: fixed;
+          bottom: 2rem;
+          right: 2rem;
+          width: 3.4rem;
+          height: 3.4rem;
+          border-radius: 50%;
+          background: #25D366;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          text-decoration: none;
+          box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+          z-index: 200;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
         @media (max-width: 900px) {
           .nav-desktop { display: none; }
           .nav-hamburger { display: flex; align-items: center; justify-content: center; }
@@ -183,8 +203,14 @@ export default function Nav() {
           <Link href="https://medium.com/@andrewakotoaddo" target="_blank" className="nav-overlay-social"><FaMediumM size={14} /></Link>
           <Link href="https://www.instagram.com/andrewsakotoaddo" target="_blank" className="nav-overlay-social"><FaInstagram size={14} /></Link>
           <Link href="https://web.facebook.com/andrew.mul" target="_blank" className="nav-overlay-social"><FaFacebookF size={14} /></Link>
+          <Link href={WA_HREF} target="_blank" className="nav-overlay-social" style={{ borderColor: "rgba(37,211,102,0.4)", color: "#25D366" }}><FaWhatsapp size={14} /></Link>
         </div>
       </div>
+
+      {/* Floating WhatsApp button — visible on all pages */}
+      <Link href={WA_HREF} target="_blank" rel="noreferrer" className="nav-wa-float" aria-label="Chat on WhatsApp">
+        <FaWhatsapp size={22} />
+      </Link>
     </>
   );
 }
